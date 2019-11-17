@@ -13,6 +13,7 @@
     <modules>        
         <module>00-base</module>
         <module>01-spring-context-indexer</module>
+        <module>02-noverify</module>
         <module>99-benchmark-launcher</module>
     </modules>
 </project>

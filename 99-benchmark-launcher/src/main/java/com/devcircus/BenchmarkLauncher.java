@@ -2,6 +2,7 @@ package com.devcircus;
 
 import com.devcircus.experiments.BaseState;
 import com.devcircus.experiments.IndexerState;
+import com.devcircus.experiments.NoverifyState;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -34,6 +35,17 @@ public class BenchmarkLauncher {
      */
     @Benchmark
     public void case01_Indexer(IndexerState state) throws Exception {
+        state.run();
+    }
+
+    /**
+     * Added the spring-context-indexer
+     *
+     * @param state
+     * @throws Exception
+     */
+    @Benchmark
+    public void case02_Noverify(NoverifyState state) throws Exception {
         state.run();
     }
 

@@ -6,7 +6,8 @@ import java.io.IOException;
 public enum Constants {
     // Project Folder - Artifact ID - Version
     BASE("00-base", "jhipster-performance-bench-00-base", "0.0.1-SNAPSHOT"),
-    INDEXER("01-spring-context-indexer", "jhipster-performance-bench-01-spring-context-indexer", "0.0.1-SNAPSHOT");
+    INDEXER("01-spring-context-indexer", "jhipster-performance-bench-01-spring-context-indexer", "0.0.1-SNAPSHOT"),
+    NOVERIFY("02-noverifyr", "jhipster-performance-bench-02-noverify", "0.0.1-SNAPSHOT");
 
     private String path;
 
