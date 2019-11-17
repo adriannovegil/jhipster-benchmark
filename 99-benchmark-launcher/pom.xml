@@ -8,7 +8,7 @@
     <artifactId>jhipster-performance-bench-99-launcher</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>JHipster Performance Bench: 99-Launcher</name>
+    <name>JHipster Perf. Bench: 99-Launcher</name>
 
     <!--
        This is the demo/sample template build script for building Java benchmarks with JMH.

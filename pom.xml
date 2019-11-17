@@ -8,10 +8,11 @@
     <artifactId>jhipster-performance-bench</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>JHipster Performance Bench</name>
+    <name>JHipster Perf. Bench</name>
 
     <modules>        
         <module>00-base</module>
+        <module>01-spring-context-indexer</module>
         <module>99-benchmark-launcher</module>
     </modules>
 </project>

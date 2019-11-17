@@ -1,14 +1,12 @@
 package com.devcircus;
 
-import com.devcircus.utils.BaseBenchmark;
-import com.devcircus.utils.JarPath;
+import com.devcircus.experiments.BaseState;
+import com.devcircus.experiments.IndexerState;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.Warmup;
 
 @Measurement(iterations = 5)
@@ -18,6 +16,7 @@ import org.openjdk.jmh.annotations.Warmup;
 public class BenchmarkLauncher {
 
     /**
+     * Base experiment. No modifications
      *
      * @param state
      * @throws Exception
@@ -28,17 +27,14 @@ public class BenchmarkLauncher {
     }
 
     /**
+     * Added the spring-context-indexer
      *
+     * @param state
+     * @throws Exception
      */
-    public static class BaseState extends BaseBenchmark {
-
-        /**
-         *
-         */
-        @Setup(Level.Trial)
-        public void beforeBenchmark() {
-            super.init(JarPath.BASE.path());
-        }
+    @Benchmark
+    public void case01_Indexer(IndexerState state) throws Exception {
+        state.run();
     }
 
 }
