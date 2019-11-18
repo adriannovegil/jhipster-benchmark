@@ -3,6 +3,7 @@ package com.devcircus;
 import com.devcircus.experiments.BaseState;
 import com.devcircus.experiments.IndexerState;
 import com.devcircus.experiments.NoverifyState;
+import com.devcircus.experiments.Tiered1State;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -39,13 +40,24 @@ public class BenchmarkLauncher {
     }
 
     /**
-     * Added the spring-context-indexer
+     * Added the -noverify
      *
      * @param state
      * @throws Exception
      */
     @Benchmark
     public void case02_Noverify(NoverifyState state) throws Exception {
+        state.run();
+    }
+
+    /**
+     * Added the -XX:TieredStopAtLevel=1
+     *
+     * @param state
+     * @throws Exception
+     */
+    @Benchmark
+    public void case03_Tiered1(Tiered1State state) throws Exception {
         state.run();
     }
 
