@@ -16,6 +16,7 @@
         <module>02-noverify</module>
         <module>03-tiered1</module>
         <module>04-jmx-false</module>
+        <module>05-appcds</module>
         <module>99-benchmark-launcher</module>
     </modules>
 </project>

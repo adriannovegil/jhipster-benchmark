@@ -1,5 +1,6 @@
 package com.devcircus;
 
+import com.devcircus.experiments.AppCDSState;
 import com.devcircus.experiments.BaseState;
 import com.devcircus.experiments.IndexerState;
 import com.devcircus.experiments.NoverifyState;
@@ -68,7 +69,18 @@ public class BenchmarkLauncher {
      * @throws Exception
      */
     @Benchmark
-    public void case03_JmxFlase(Tiered1State state) throws Exception {
+    public void case04_JmxFlase(Tiered1State state) throws Exception {
+        state.run();
+    }
+
+    /**
+     * AppCDS (Application Class Data Sharing)
+     *
+     * @param state
+     * @throws Exception
+     */
+    @Benchmark
+    public void case05_AppCDS(AppCDSState state) throws Exception {
         state.run();
     }
 

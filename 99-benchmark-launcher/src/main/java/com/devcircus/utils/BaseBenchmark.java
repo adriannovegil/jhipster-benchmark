@@ -16,8 +16,8 @@ import org.openjdk.jmh.annotations.TearDown;
 @State(Scope.Benchmark)
 public abstract class BaseBenchmark {
 
-    private final File home = new File("target");
-    private List<String> args;
+    protected final File home = new File("target");
+    protected List<String> args;
     private Process started;
 
     /**
@@ -63,7 +63,7 @@ public abstract class BaseBenchmark {
      * @return
      * @throws IOException
      */
-    private static String output(InputStream inputStream, String marker) throws IOException {
+    protected static String output(InputStream inputStream, String marker) throws IOException {
         var sb = new StringBuilder();
         var br = new BufferedReader(new InputStreamReader(inputStream));
         String line;
