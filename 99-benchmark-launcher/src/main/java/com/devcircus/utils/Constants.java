@@ -10,7 +10,8 @@ public enum Constants {
     NO_VERIFY("02-noverify", "jhipster-performance-bench-02-noverify", "0.0.1-SNAPSHOT"),
     TIERED_1("03-tiered1", "jhipster-performance-bench-03-tiered1", "0.0.1-SNAPSHOT"),
     JMX_FALSE("04-jmx-false", "jhipster-performance-bench-04-jmx-false", "0.0.1-SNAPSHOT"),
-    APP_CDS("05-appcds", "jhipster-performance-bench-05-appcds", "0.0.1-SNAPSHOT");
+    APP_CDS("05-appcds", "jhipster-performance-bench-05-appcds", "0.0.1-SNAPSHOT"),
+    THIN_LAUNCHER("06-thin-launcher", "jhipster-performance-bench-06-thin-launcher", "0.0.1-SNAPSHOT");
 
     private String path;
 

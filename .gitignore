@@ -27,3 +27,4 @@ target/
 /03-tiered1/node_modules/
 /04-jmx-false/node_modules/
 /05-appcds/node_modules/
+/06-thin-launcher/node_modules/

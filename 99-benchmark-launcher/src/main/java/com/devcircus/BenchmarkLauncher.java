@@ -4,6 +4,7 @@ import com.devcircus.experiments.AppCDSState;
 import com.devcircus.experiments.BaseState;
 import com.devcircus.experiments.IndexerState;
 import com.devcircus.experiments.NoverifyState;
+import com.devcircus.experiments.ThinLauncherState;
 import com.devcircus.experiments.Tiered1State;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -81,6 +82,17 @@ public class BenchmarkLauncher {
      */
     @Benchmark
     public void case05_AppCDS(AppCDSState state) throws Exception {
+        state.run();
+    }
+
+    /**
+     * Thin Launcher
+     *
+     * @param state
+     * @throws Exception
+     */
+    @Benchmark
+    public void case06_ThinLauncher(ThinLauncherState state) throws Exception {
         state.run();
     }
 

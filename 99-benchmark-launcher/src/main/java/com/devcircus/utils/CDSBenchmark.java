@@ -50,7 +50,7 @@ public abstract class CDSBenchmark extends BaseBenchmark {
             builder.redirectErrorStream(true);
             // Start the process
             var process = builder.start();
-            System.out.println(output(process.getInputStream(), "total    :"));
+            String output = output(process.getInputStream(), null);
             process.destroyForcibly();
         } catch (IOException e) {
             throw new RuntimeException("Failed to generate CDS ClassList.", e);
