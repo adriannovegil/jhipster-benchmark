@@ -1,11 +1,12 @@
 package com.devcircus;
 
-import com.devcircus.experiments.AppCDSState;
-import com.devcircus.experiments.BaseState;
-import com.devcircus.experiments.IndexerState;
-import com.devcircus.experiments.NoverifyState;
-import com.devcircus.experiments.ThinLauncherState;
-import com.devcircus.experiments.Tiered1State;
+import com.devcircus.experiment.AppCDSState;
+import com.devcircus.experiment.AppCDSThinLauncherState;
+import com.devcircus.experiment.BaseState;
+import com.devcircus.experiment.IndexerState;
+import com.devcircus.experiment.NoverifyState;
+import com.devcircus.experiment.ThinLauncherState;
+import com.devcircus.experiment.Tiered1State;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -93,6 +94,16 @@ public class BenchmarkLauncher {
      */
     @Benchmark
     public void case06_ThinLauncher(ThinLauncherState state) throws Exception {
+        state.run();
+    }
+    /**
+     * AppCDS (Application Class Data Sharing) + Thin Launcher
+     *
+     * @param state
+     * @throws Exception
+     */
+    @Benchmark
+    public void case07_AppCDSThinLauncher(AppCDSThinLauncherState state) throws Exception {
         state.run();
     }
 
