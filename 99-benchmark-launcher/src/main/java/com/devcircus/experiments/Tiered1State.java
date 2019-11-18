@@ -15,6 +15,6 @@ public class Tiered1State extends BaseBenchmark {
      */
     @Setup(Level.Trial)
     public void beforeBenchmark() {
-        super.init(Constants.BASE.path(), "-XX:TieredStopAtLevel=1");
+        super.init(Constants.TIERED_1.path(), "-XX:TieredStopAtLevel=1");
     }
 }

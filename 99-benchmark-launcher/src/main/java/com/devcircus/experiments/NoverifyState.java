@@ -15,6 +15,6 @@ public class NoverifyState extends BaseBenchmark {
      */
     @Setup(Level.Trial)
     public void beforeBenchmark() {
-        super.init(Constants.BASE.path(), "-noverify");
+        super.init(Constants.NO_VERIFY.path(), "-noverify");
     }
 }

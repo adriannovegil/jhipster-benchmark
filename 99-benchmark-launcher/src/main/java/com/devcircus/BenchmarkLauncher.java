@@ -29,7 +29,7 @@ public class BenchmarkLauncher {
     }
 
     /**
-     * Added the spring-context-indexer
+     * Added the spring-context-indexer dependency
      *
      * @param state
      * @throws Exception
@@ -40,7 +40,7 @@ public class BenchmarkLauncher {
     }
 
     /**
-     * Added the -noverify
+     * Added the -noverify parameter
      *
      * @param state
      * @throws Exception
@@ -51,13 +51,24 @@ public class BenchmarkLauncher {
     }
 
     /**
-     * Added the -XX:TieredStopAtLevel=1
+     * Added the -XX:TieredStopAtLevel=1 parameter
      *
      * @param state
      * @throws Exception
      */
     @Benchmark
     public void case03_Tiered1(Tiered1State state) throws Exception {
+        state.run();
+    }
+
+    /**
+     * Added the -Dspring.jmx.enabled=false parameter
+     *
+     * @param state
+     * @throws Exception
+     */
+    @Benchmark
+    public void case03_JmxFlase(Tiered1State state) throws Exception {
         state.run();
     }
 

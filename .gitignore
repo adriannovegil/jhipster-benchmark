@@ -25,3 +25,4 @@ target/
 /.nb-gradle/
 /01-base (copia)/node_modules/
 /03-tiered1/node_modules/
+/04-jmx-false/node_modules/
