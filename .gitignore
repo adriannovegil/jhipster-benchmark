@@ -29,3 +29,5 @@ target/
 /05-appcds/node_modules/
 /06-thin-launcher/node_modules/
 /07-appcds-thin-launcher/node_modules/
+/08-all/node_modules/
+/08-all-applied/node_modules/

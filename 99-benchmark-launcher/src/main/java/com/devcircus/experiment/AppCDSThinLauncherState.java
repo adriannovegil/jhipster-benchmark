@@ -1,6 +1,6 @@
 package com.devcircus.experiment;
 
-import com.devcircus.benchmark.AppCDSBenchmark;
+import com.devcircus.benchmark.AppCDSThinLauncherBenchmark;
 import com.devcircus.utils.Constants;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Setup;
@@ -8,7 +8,7 @@ import org.openjdk.jmh.annotations.Setup;
 /**
  *
  */
-public class AppCDSThinLauncherState extends AppCDSBenchmark {
+public class AppCDSThinLauncherState extends AppCDSThinLauncherBenchmark {
 
     /**
      * Prepare the Benchmark

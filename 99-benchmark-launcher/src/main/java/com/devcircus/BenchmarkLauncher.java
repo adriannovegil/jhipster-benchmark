@@ -1,5 +1,6 @@
 package com.devcircus;
 
+import com.devcircus.experiment.AllAppliedState;
 import com.devcircus.experiment.AppCDSState;
 import com.devcircus.experiment.AppCDSThinLauncherState;
 import com.devcircus.experiment.BaseState;
@@ -96,6 +97,7 @@ public class BenchmarkLauncher {
     public void case06_ThinLauncher(ThinLauncherState state) throws Exception {
         state.run();
     }
+
     /**
      * AppCDS (Application Class Data Sharing) + Thin Launcher
      *
@@ -104,6 +106,17 @@ public class BenchmarkLauncher {
      */
     @Benchmark
     public void case07_AppCDSThinLauncher(AppCDSThinLauncherState state) throws Exception {
+        state.run();
+    }
+
+    /**
+     * AppCDS (Application Class Data Sharing) + Thin Launcher
+     *
+     * @param state
+     * @throws Exception
+     */
+    @Benchmark
+    public void case08_AllApplied(AllAppliedState state) throws Exception {
         state.run();
     }
 
