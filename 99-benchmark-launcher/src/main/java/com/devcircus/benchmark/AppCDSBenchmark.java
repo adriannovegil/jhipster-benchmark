@@ -5,6 +5,8 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @State(Scope.Benchmark)
 public abstract class AppCDSBenchmark extends BaseBenchmark {
@@ -24,8 +26,12 @@ public abstract class AppCDSBenchmark extends BaseBenchmark {
                 "-XX:SharedArchiveFile=app.jsa"));
         args.addAll(Arrays.asList(additionalArgs));
         args.addAll(Arrays.asList("-jar", jarPath));
-
-        BenchmarkUtils.generateCdsClassListAndDataArchive(home, jarPath);
+        // Prepare the environment
+        try {
+            BenchmarkUtils.generateCdsClassListAndDataArchive(home, jarPath);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(AppCDSBenchmark.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

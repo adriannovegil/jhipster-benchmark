@@ -5,6 +5,8 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @State(Scope.Benchmark)
 public abstract class AppCDSThinLauncherBenchmark extends BaseBenchmark {
@@ -27,9 +29,13 @@ public abstract class AppCDSThinLauncherBenchmark extends BaseBenchmark {
         args.addAll(Arrays.asList(
                 "--thin.root=.",
                 "--thin.dryrun=false"));
-        
-        BenchmarkUtils.generateCdsClassListAndDataArchive(home, jarPath);
-        BenchmarkUtils.generateThinJarClassPath(home, jarPath);
+        // Prepare the environment
+        try {
+            BenchmarkUtils.generateCdsClassListAndDataArchive(home, jarPath);
+            BenchmarkUtils.generateThinJarClassPath(home, jarPath);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(AppCDSThinLauncherBenchmark.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

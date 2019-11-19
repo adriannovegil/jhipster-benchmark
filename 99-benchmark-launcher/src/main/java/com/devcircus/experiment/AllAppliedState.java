@@ -15,7 +15,7 @@ public class AllAppliedState extends AppCDSThinLauncherBenchmark {
      */
     @Setup(Level.Trial)
     public void beforeBenchmark() {
-        super.init(Constants.APP_CDS_THIN_LAUNCHER.path(), 
+        super.init(Constants.ALL_APPLIED.path(), 
                 "-noverify", 
                 "-XX:TieredStopAtLevel=1", 
                 "-Dspring.jmx.enabled=false");

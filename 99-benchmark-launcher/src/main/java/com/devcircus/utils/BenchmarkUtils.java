@@ -13,8 +13,9 @@ public abstract class BenchmarkUtils {
      *
      * @param home
      * @param jarPath
+     * @throws java.lang.InterruptedException
      */
-    public static void generateCdsClassListAndDataArchive(File home, String jarPath) {
+    public static void generateCdsClassListAndDataArchive(File home, String jarPath) throws InterruptedException {
         try {
             // java -XX:+UseAppCDS -XX:DumpLoadedClassList=app.lst -Xshare:dump -XX:SharedArchiveFile=app.jsa 
             // --class-path app.jar
@@ -27,10 +28,8 @@ public abstract class BenchmarkUtils {
                     "--class-path", jarPath);
             builder.directory(home);
             builder.redirectErrorStream(true);
-            // Start the process
-            var process = builder.start();
-            String output = output(process.getInputStream(), null);
-            process.destroyForcibly();
+            // Start the process and wait
+            builder.start().waitFor();
         } catch (IOException e) {
             throw new RuntimeException("Failed to generate CDS ClassList.", e);
         }
@@ -41,8 +40,9 @@ public abstract class BenchmarkUtils {
      *
      * @param home
      * @param jarPath
+     * @throws java.lang.InterruptedException
      */
-    public static void generateThinJarClassPath(File home, String jarPath) {
+    public static void generateThinJarClassPath(File home, String jarPath) throws InterruptedException {
         try {
             var builder = new ProcessBuilder(
                     "java",
@@ -52,10 +52,8 @@ public abstract class BenchmarkUtils {
                     "--thin.root=.");
             builder.directory(home);
             builder.redirectErrorStream(true);
-            // Start the process
-            var process = builder.start();
-            String output = output(process.getInputStream(), null);
-            process.destroyForcibly();
+            // Start the process and wait
+            builder.start().waitFor();
         } catch (IOException e) {
             throw new RuntimeException("Failed to generate ThinJar classpath.", e);
         }
