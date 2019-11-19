@@ -24,7 +24,12 @@ public abstract class BaseBenchmark {
      */
     public void init(String jarPath, String... additionalArgs) {
         args = new ArrayList<>();
-        args.addAll(Arrays.asList("java", "-Xmx128m", "-Djava.security.egd=file:/dev/./urandom", "-Dserver.port=0"));
+        args.addAll(Arrays.asList(
+                "java", 
+                "-XX:+UnlockExperimentalVMOptions", 
+                "-XX:+UseJVMCICompiler", 
+                "-Djava.security.egd=file:/dev/./urandom", 
+                "-Dserver.port=0"));
         args.addAll(Arrays.asList(additionalArgs));
         args.addAll(Arrays.asList("-jar", jarPath));
     }
